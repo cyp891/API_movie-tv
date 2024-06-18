@@ -479,3 +479,24 @@ function init() {
   highlightActiveLink();
 }
 document.addEventListener("DOMContentLoaded", init);
+
+const map = L.map("map").setView([0, 0], 2);
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+const marker = L.marker([0, 0]).addTo(map);
+
+navigator.geolocation.getCurrentPosition(function (position) {
+  const coords = position.coords;
+  const latitude = coords.latitude;
+  const longitude = coords.longitude;
+  const accuracy = coords.accuracy;
+
+  marker.setLatLng([latitude, longitude]).update();
+  map.setView([latitude, longitude], 130);
+  marker.bindPopup(`<strong>Hello World</strong> <br/> This is my location`);
+});
+

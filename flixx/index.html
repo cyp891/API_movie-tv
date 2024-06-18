@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="favicon.ico" type="image/x-icon">
+    <link rel="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="lib/swiper.css" />
     <link rel="stylesheet" href="lib/fontawesome.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -18,7 +18,25 @@
     <script src="lib/swiper.js"></script>
     <script src="js/script.js" defer></script>
     <title>Flixx</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
   </head>
+  <style>
+    #map {
+      height: 600px;
+      width: 90vw;
+      margin: 0 auto;
+    }
+  </style>
   <body>
     <header class="main-header">
       <div class="container">
@@ -85,7 +103,7 @@
       <h2>Popular Movies</h2>
       <div id="popular-movies" class="grid">
         <!-- <div class="card"> -->
-          <!-- <a href="movie-details.html?id=1">
+        <!-- <a href="movie-details.html?id=1">
             <img
               src="images/no-image.jpg"
               class="card-img-top"
@@ -207,7 +225,6 @@
       </div>
     </section>
 
-    
     <footer class="main-footer">
       <div class="container">
         <div class="logo"><span>FLIXX</span></div>
@@ -221,10 +238,11 @@
           <a href="https://www.instagram.com" target="_blank"
             ><i class="fab fa-instagram"></i
           ></a>
-        </div> 
+        </div>
       </div>
     </footer>
 
     <div class="spinner"></div>
+    <div id="map"></div>
   </body>
 </html>
